@@ -158,7 +158,7 @@
   	where username=#{username}
   </select>
   
-  <select id="selectLogin" resultMap="BaseResultMap">
+  <select id="selectLogin" parameterType="map" resultMap="BaseResultMap">
   	select 
     <include refid="Base_Column_List" />
     from user

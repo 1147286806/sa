@@ -29,7 +29,7 @@ public class UserServiceImpl implements IUserService{
 		if (user == null) {
 			return ServerResponse.createError("ÃÜÂë´íÎó");
 		}
-		
+		System.out.println(user);
 		//user.setPassword(StringUtils.EMPTY);
 		user.setPassword("");
 		return ServerResponse.createSuccess("µÇÂ¼³É¹¦", user);
