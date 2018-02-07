@@ -32,4 +32,26 @@ public class ProductServiceImpl implements IProductService{
 		//Integer count = (int) pageInfo.getTotal();
 		return ServerResponse.createSuccess("查询成功", count, list);
 	}
+	
+	@Override
+	public ServerResponse deleteById(Integer id) {
+		int count = productMapper.deleteByPrimaryKey(id);
+		if (count > 0) {
+			return ServerResponse.createSuccess("删除成功");
+		} 
+		
+		return ServerResponse.createError("删除失败");
+	}
+
+	@Override
+	public ServerResponse deleteAll(String ids) {
+		String[] idsArray = ids.split(",");
+		// delete from product where id in();
+		int count = productMapper.deleteAll(idsArray);
+		if (count == idsArray.length) {
+			return ServerResponse.createSuccess("批量删除成功");
+		}
+		
+		return ServerResponse.createError("批量删除失败");
+	}
 }

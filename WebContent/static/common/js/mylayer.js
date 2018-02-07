@@ -3,7 +3,7 @@ var mylayer = {
 	success : function(contents) {
 		layer.msg(
 			contents,
-			{icon:1, time:3000}
+			{icon:1, time:2000}
 		);
 	},
 	
@@ -11,7 +11,7 @@ var mylayer = {
 	successUrl : function(contents, url) {
 		layer.msg(
 			contents,
-			{icon:1, time:3000},
+			{icon:1, time:1000},
 			function() {
 				location.href = url;
 			}
@@ -22,7 +22,7 @@ var mylayer = {
 	errorMsg : function(contents) {
 		layer.msg(
 			contents,
-			{icon:2, time:3000}
+			{icon:2, time:2000}
 		);
 	},
 	

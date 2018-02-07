@@ -23,6 +23,18 @@ public class ProductManagerController {
 		return productService.pageList(page, limit,product);
 	}
 	
+	@RequestMapping("/deleteById")
+	@ResponseBody
+	public ServerResponse deleteById(Integer id) {
+		return productService.deleteById(id);
+	}
+	
+	@RequestMapping("/deleteAll")
+	@ResponseBody
+	public ServerResponse deleteAll(String ids) {
+		return productService.deleteAll(ids);
+	}
+	
 	@RequestMapping("/getProductPage")
 	public String getProductPage() {
 		return "product_list";
